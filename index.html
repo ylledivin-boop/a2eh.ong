@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A2EH | Agir Emsemble pour les Enfants Handicapés - Accueil</title>
+    <style>
+   section { scroll-margin-top: 100px; }
+        /* ==========================================================================
+           1. RÉINITIALISATION & CONFIGURATION GÉNÉRALE
+           ========================================================================== */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+        }
+        
+        body { 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
+            line-height: 1.6; 
+            background-color: #f8fafc; 
+            color: #20242c; 
+            overflow-x: hidden; 
+        }
+
+        /* ==========================================================================
+           2. EN-TÊTE & NAVIGATION (HEADER)
+           ========================================================================== */
+        header { 
+            padding: 15px 40px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: #ffffff; 
+            border-bottom: 3px solid #00A8E8; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
+        }
+        
+        .logo-box { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
+        
+        .logo-box img { 
+            width: 140px; 
+            height: auto; 
+        }
+        
+        .logo-text span { 
+            display: block; 
+        }
+        
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 20px; 
+        }
+        
+        nav a { 
+            text-decoration: none; 
+            color: #20242c; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            transition: color 0.3s ease; 
+        }
+        
+        nav a:hover { 
+            color: #00A8E8; 
+        }
+
+        /* ==========================================================================
+           3. SECTION PRINCIPALE (HERO SECTION)
+           ========================================================================== */
+        .hero { 
+            background-color: #ffffff; 
+            color: #20242c; 
+            padding: 110px 20px 90px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid #cbd5e0; 
+        }
+        
+        .hero h1 { 
+            font-size: 2.2rem; 
+            margin-bottom: 15px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-weight: 800; 
+            color: #20242c; 
+            line-height: 1.3; 
+        }
+        
+        .hero h1 span { 
+            color: #00A8E8; 
+            display: block; 
+            margin-top: 5px; 
+            font-size: 1.6rem; 
+        }
+        
+        .hero p { 
+            font-size: 1.2rem; 
+            color: #20242c; 
+            margin-top: 20px; 
+            margin-bottom: 40px; 
+            font-weight: 500; 
+        }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 15px 45px; 
+            background: transparent; 
+            color: #00A8E8; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            border: 2px solid #00A8E8; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: all 0.3s ease; 
+        }
+        
+        .btn:hover { 
+            background: #00A8E8; 
+            color: #ffffff; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.2); 
+        }
+
+        /* ==========================================================================
+           4. BLOC STATISTIQUES & CHIFFRES CLÉS
+           ========================================================================== */
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            max-width: 850px; 
+            margin: -40px auto 60px auto; 
+            padding: 30px; 
+            background: #ffffff; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); 
+            border: 1px solid #cbd5e0; 
+            text-align: center; 
+            position: relative; 
+            z-index: 10; 
+        }
+        
+        .stat-item h3 { 
+            font-size: 2.5rem; 
+            color: #00A8E8; 
+            font-weight: 800; 
+            margin-bottom: 5px; 
+        }
+        
+        .stat-item p { 
+            font-size: 0.95rem; 
+            color: #20242c; 
+            font-weight: 600; 
+        }
+
+        /* ==========================================================================
+           5. BLOCS DE CONTENU, FORMATIONS & GALERIES
+           ========================================================================== */
+        .content-box { 
+            max-width: 850px; 
+            margin: 0 auto 50px auto; 
+            padding: 50px; 
+            background: #ffffff; 
+            border-radius: 15px; 
+            border: 2px solid #cbd5e0; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
+        }
+        
+        h2 { 
+            color: #20242c; 
+            margin-bottom: 25px; 
+            font-size: 1.6rem; 
+            position: relative; 
+            display: inline-block; 
+            font-weight: 700; 
+        }
+        
+        h2::after { 
+            content: ''; 
+            position: absolute; 
+            left: 0; 
+            bottom: -6px; 
+            width: 50px; 
+            height: 4px; 
+            background-color: #00A8E8; 
+            border-radius: 2px; 
+        }
+        
+        .content-box p { 
+            margin-bottom: 20px; 
+            color: #20242c; 
+            font-size: 1.05rem; 
+            text-align: justify; 
+            font-weight: normal; 
+        }
+        
+        .content-box strong { 
+            color: #20242c; 
+            font-weight: bold; 
+        }
+
+        /* Style de la liste des formations */
+        .formation-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .formation-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1.05rem; 
+            color: #20242c; 
+        }
+
+        .formation-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00A8E8;
+            font-weight: bold;
+        }
+
+        /* SOUS-TITRES DE LA GALERIE */
+        .gallery-subtitle {
+            font-size: 1.15rem;
+            color: #00A8E8;
+            margin: 35px 0 15px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid #00A8E8;
+            padding-left: 10px;
+        }
+
+        .activities-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 15px; 
+            margin-bottom: 20px;
+        }
+        
+        .activities-grid img { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            border: 2px solid #cbd5e0; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
+            cursor: pointer; /* Indique clairement que l'image est cliquable */
+        }
+        
+        .activities-grid img:hover { 
+            transform: scale(1.03); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ==========================================================================
+           MODAL LIGHTBOX (Agrandissement d'image au clic)
+           ========================================================================== */
+        .lightbox {
+            display: none; /* Caché par défaut */
+            position: fixed;
+            z-index: 2000; /* Par-dessus le header collant */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(15, 23, 42, 0.95); /* Arrière-plan sombre premium */
+            backdrop-filter: blur(5px); /* Flou esthétique en arrière-plan */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 3px solid #ffffff;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            background-color: rgba(32, 36, 44, 0.85);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: color 0.2s ease;
+            cursor: pointer;
+            user-select: none;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: #00A8E8;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Desactive le scroll du body quand la lightbox est active */
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        /* ==========================================================================
+           6. SECTION PARTENAIRES ENRICHIE
+           ========================================================================== */
+       .partners-grid { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    margin-top: 30px;     
+   }
+     .partners-grid img { 
+    height: 60px; /* Ajustez cette valeur pour agrandir ou réduire la hauteur */
+    width: auto;  /* Garde les proportions d'origine */
+    object-fit: contain;
+    padding: 5px;
+    background-color: #f1f5f9;
+    border-radius: 10px;
+    border: 1px solid #cbd5e0;
+    transition: all 0.2s ease; 
+     }
+
+        .partner-logo:hover {
+           transform: translateY(-3px);
+    background-color: #ffffff;
+    border-color: #00A8E8;
+    box-shadow: 0 6px 12px rgba(0, 168, 232, 0.1);     
+     }
+
+        /* ==========================================================================
+           7. FORMULAIRE DE CONTACT
+           ========================================================================== */
+        .contact-form { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            margin-top: 25px; 
+        }
+        
+        .form-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+        }
+        
+        .form-group label { 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            color: #20242c; 
+        }
+        
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select { 
+            padding: 14px; 
+            border: 2px solid #20242c; 
+            border-radius: 8px; 
+            font-family: inherit; 
+            font-size: 1rem; 
+            color: #20242c; 
+            background-color: #ffffff; 
+        }
+        
+        .form-group input:focus, 
+        .form-group textarea:focus, 
+        .form-group select:focus { 
+            outline: none; 
+            border-color: #00A8E8; 
+            box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1); 
+        }
+        
+        .btn-submit { 
+            background: #00A8E8; 
+            color: #ffffff; 
+            border: none; 
+            padding: 16px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: background-color 0.2s ease; 
+        }
+        
+        .btn-submit:hover { 
+            background: #0086b8; 
+        }
+
+        /* ==========================================================================
+           8. PIED DE PAGE (FOOTER)
+           ========================================================================== */
+        footer { 
+            background: #20242c; 
+            color: #ffffff; 
+            padding: 60px 20px; 
+            text-align: center; 
+            font-size: 0.95rem; 
+            border-top: 4px solid #00A8E8; 
+        }
+        
+        footer p { 
+            color: #ffffff; 
+            margin-bottom: 8px; 
+        }
+        
+        footer strong { 
+            color: #ffffff; 
+        }
+        
+        footer a { 
+            color: #00A8E8; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        
+        footer a:hover { 
+            text-decoration: underline; 
+        }
+
+        /* ==========================================================================
+           9. ANIMATIONS (FADE-IN)
+           ========================================================================== */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            visibility: hidden;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* ==========================================================================
+           10. RESPONSIVE DESIGN
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                gap: 15px; 
+                text-align: center; 
+                padding: 20px; 
+            }
+            
+            .hero h1 { 
+                font-size: 1.6rem; 
+            }
+            
+            .hero h1 span { 
+                font-size: 1.2rem; 
+            }
+            
+            .stats-grid { 
+                grid-template-columns: 1fr; 
+                gap: 25px; 
+                margin-top: 30px; 
+            }
+            
+            .content-box { 
+                padding: 30px 20px; 
+            }
+            
+            .partners-container { 
+                gap: 20px; 
+            }
+
+            .lightbox-close {
+                top: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- EN-TÊTE DU SITE -->
+    <header>
+        <div class="logo-box">
+            <img src="vrai-logo.jpg" alt="Logo">
+            <div class="logo-text">
+                <span style="font-size: 1.4rem; font-weight: bold; color: #00A8E8;">ONG A2EH</span>
+                <span style="font-size: 0.85rem; color:#20242c; font-weight: bold; text-transform: uppercase; letter-spacing: 0.3px;">Organisation Non Gouvernementale</span>
+                <span style="font-size: 0.8rem; color:#20242c; font-weight: bold; text-transform: uppercase;">République du Congo</span> 
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#a-propos">Présentation</a></li>
+                <li><a href="#formations">Nos Formations</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#partenaires">Partenaires</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION D'ACCUEIL (HERO) -->
+    <main class="hero">
+        <h1>Agir ensemble pour les enfant handicapés </span></h1>
+        <p>UN ENFANT, UN AVENIR ENSEMBLE DONNONS-LEUR DES AILES</p>
+        <a href="#contact" class="btn" onclick="document.getElementById('objet').value='Soutien / Faire un don';">Soutenir nos actions</a>
+    </main>
+
+    <!-- BLOC CHIFFRES CLÉS -->
+    <div class="stats-grid fade-in-section">
+        <div class="stat-item">
+            <h3>+10 ans</h3>
+            <p>D'expérience terrain</p>
+        </div>
+        <div class="stat-item">
+            <h3>+100</h3>
+            <p>Enfants soutenus</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Inclusion &amp; Autonomie</p>
+        </div>
+    </div>
+
+    <!-- SECTION PRÉSENTATION ENRICHIE -->
+    <section id="a-propos" class="content-box fade-in-section">
+        <h2>À propos de nous</h2>
+        <p>Créée en 2009 et opérationnelle depuis 2013 par <strong>Mme Joël-Annièle POATY</strong>, l'association <strong>« Agir Ensemble pour les Enfants Handicapés » (A2EH)</strong> s'est imposée comme un pilier de l'inclusion scolaire au Congo. À travers des actions de sensibilisation, des récompenses pour les élèves handicapés et un soutien direct aux familles, l'A2EH œuvre à changer le regard de la société et à ouvrir les portes de l'école à tous.</p>
+        
+        <p>Notre histoire est née d'un constat simple mais alarmant : trop d'enfants en situation de handicap en République du Congo restent marginalisés, privés d'accès à l'éducation et perçus comme une charge plutôt que comme une chance pour l'avenir. Face à cette réalité, l'ONG s'est donné pour mission de briser l'isolement des familles en leur apportant une oreille attentive, des conseils d'experts et une aide matérielle concrète (fournitures scolaires, équipements adaptés, bourses d'études).</p>
+
+        <p>Depuis 2023, l'association passe à la vitesse supérieure. Elle se tourne résolument vers <strong>l'autonomisation économique</strong> des jeunes et des femmes en situation de handicap en leur offrant des <strong>formations professionnelles</strong> pratiques et un accompagnement vers l'indépendance financière.</p>
+        
+        <p>Nous croyons fermement que le handicap ne doit plus être un frein au développement personnel ou professionnel. À travers nos valeurs de <strong>Dignité, d'Équité et de Solidarité agissante</strong>, nous travaillons main dans la main avec l'État congolais, les partenaires internationaux et les citoyens engagés pour bâtir une société plus juste, où chaque enfant et chaque femme peut s'épanouir librement et dignement.</p>
+    </section>
+
+    <!-- SECTION NOS FORMATIONS -->
+    <section id="formations" class="content-box fade-in-section">
+        <h2>Nos Formations Professionnelles</h2>
+        <p>Afin de favoriser une insertion sociale et économique réussie, l'ONG A2EH déploie des ateliers de formation pratique adaptés aux aptitudes de chacun :</p>
+        <ul class="formation-list">
+            <li><strong>Crochets et laines</strong></li>
+            <li><strong>Coupe couture</strong></li>
+            <li><strong>Fabrication des produits cosmétiques</strong></li>
+            <li><strong>Transformation des produits agricoles</strong></li>
+            <li><strong>Formation dans les métiers de la technologie</strong></li>
+        </ul>
+    </section>
+
+    <!-- SECTION GALERIE COMPLÈTE EN 4 PARTIES (RE-STRUCTURÉE) -->
+    <section id="galerie" class="content-box fade-in-section">
+        <h2>Galerie de nos actions</h2>
+        <p>Découvrez l'ensemble de nos activités et l'impact de nos actions au quotidien. Cliquez sur n'importe quelle image pour l'agrandir.</p>
+        
+        <!-- Sous-partie 1 : Séances de travail avec diplomates et partenaires (Enrichie d'images pour créer 3+ lignes) -->
+        <div class="gallery-subtitle">Séances de travail avec les diplomates et partenaires</div>
+        <div class="activities-grid">
+            <!-- Ligne 1 -->
+            <img src="parti.JPG" alt="Rencontre avec l'ambassadeur des USA">
+            <img src="parti3.JPG" alt="Visite officielle de délégations">
+            <img src="parti8.JPG" alt="Rencontre avec l'Ambassadeur d'Allemagne">
+            <img src="parti1.JPG" alt="Photo de groupe officielle">
+            <!-- Ligne 2 -->
+            <img src="ambassadeur5.jpg" alt="Échanges officiels avec les diplomates et partenaires">
+            <img src="parti2.JPG" alt="Discussions bilatérales stratégiques">
+            <img src="parti4.JPG" alt="Présentation de l'ONG devant les institutions">
+            <img src="parti5.JPG" alt="Signature d'accords et coopération">
+            <!-- Ligne 3 et plus -->
+            <img src="parti6.JPG" alt="Séance d'échange avec les diplomates">
+            <img src="parti7.JPG" alt="Plaidoyer international pour l'inclusion">
+            <img src="ambassadeur1.jpg" alt="Rencontre de haut niveau et de soutien">
+            <img src="ambassadeur2.jpg" alt="Partenariat diplomatique et humanitaire">
+            <img src="ambassadeur3.jpg" alt="Réunion de concertation avec les partenaires techniques">
+        </div>
+
+        <!-- Sous-partie 2 : Galerie de nos formations -->
+        <div class="gallery-subtitle">Galerie de nos formations</div>
+        <div class="activities-grid">
+            <img src="formation1.jpg" alt="Atelier couture">
+            <img src="formation2.jpg" alt="Cours de crochet et de laine">
+            <img src="formation3.jpg" alt="Fabrication artisanale de cosmétiques">
+            <img src="formation4.jpg" alt="Atelier d'initiation à l'informatique et aux technologies">
+        </div>
+
+        <!-- Sous-partie 3 : Expositions -->
+        <div class="gallery-subtitle">Expositions</div>
+        <div class="activities-grid">
+            <img src="expo1.jpg" alt="Présentation des créations de nos élèves">
+            <img src="expo2.jpg" alt="Stand d'exposition officiel A2EH">
+            <img src="expo3.jpg" alt="Vente solidaire de nos produits agricoles locaux">
+            <img src="expo4.jpg" alt="Valorisation du savoir-faire artisanal">
+        </div>
+
+        <!-- Sous-partie 4 : Descentes de terrain -->
+        <div class="gallery-subtitle">Descentes de terrain</div>
+        <div class="activities-grid">
+            <img src="fournitures-crs.jpg" alt="Réception officielle de fournitures de bureau auprès du CRS">
+            <img src="activite2.JPG" alt="Remise de dons et bourses">
+            <img src="activite4.JPG" alt="Descente terrain et suivi des familles">
+            <img src="don3.jpg" alt="Distribution de matériel et d'équipements adaptés">
+            <img src="don4.jpg" alt="Soutien de proximité aux familles congolaises">
+            <img src="activite1.JPG" alt="Sourire d'un enfant soutenu par l'ONG">
+            <img src="activite3.JPG" alt="Action humanitaire et sociale directe">
+        </div>
+    </section>
+
+    <!-- SECTION PARTENAIRES VALORISÉE ET INTÉGRÉE AU MENU -->
+    <section id="partenaires" class="content-box fade-in-section">
+        <h2>Nos Partenaires</h2>
+        <p>Le soutien de nos précieux partenaires nous permet de mener à bien nos projets d'inclusion et d'autonomisation en République du Congo. Nous les remercions chaleureusement pour leur confiance et leur engagement constant.</p>
+    <div class="partners-grid">
+       <img src="logo-total.webp" alt="Logo TotalEnergies">
+        <img src="logo-crs.webp" alt="Logo CRS">
+        <img src="logo-congo.webp" alt="Logo Congo">
+        <img src="logo-unfpa.webp" alt="Logo UNFPA">      
+   </div>
+    </section>
+
+    <!-- SECTION CONTACT CONNECTÉE À WEB3FORMS -->
+    <section id="contact" class="content-box fade-in-section">
+        <h2>Nous contacter / Nous soutenir</h2>
+        <p style="margin-bottom: 20px; margin-top: 10px;">Vous pouvez nous envoyer un message via le formulaire ci-dessous ou directement par e-mail à : <br>
+        <strong><a href="mailto:a2eh.contact@gmail.com" style="color: #00A8E8; text-decoration: none;">a2eh.contact@gmail.com</a></strong> ou 
+        <strong><a href="mailto:ong.a2eh.congo@gmail.com" style="color: #00A8E8; text-decoration: none;">ong.a2eh.congo@gmail.com</a></strong></p>
+        
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="5b5b8bdc-96dc-4c72-9cdc-166772efe7e8">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+            <div class="form-group">
+                <label for="nom">Nom complet ou Entreprise</label>
+                <input type="text" id="nom" name="name" required placeholder="Ex: Jean Dupont">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" required placeholder="Ex: contact@domaine.com">
+            </div>
+
+            <div class="form-group">
+                <label for="objet">Vous souhaitez :</label>
+                <select id="objet" name="subject" required>
+                    <option value="Demande d'information sur les formations">Demander des informations sur nos formations</option>
+                    <option value="Soutien / Faire un don">Soutenir nos actions (Faire un don)</option>
+                    <option value="Candidature Bénévole">Devenir bénévole</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Votre Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre demande en quelques lignes..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Envoyer le message</button>
+        </form>
+    </section>
+
+    <!-- BOÎTE MODALE LIGHTBOX (Cliquable pour agrandir) -->
+    <div id="lightboxModal" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Image agrandie">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p><strong>Siège social :</strong> Moukoukoulou N°1266, Plateaux des 15 ans, Brazzaville, République du Congo</p>
+        <p>Permanence téléphonique : 06.652.36.14 | 06.663.30.20 | 05.511.24.39</p>
+        <p>&copy; 2026 ONG A2EH. Tous droits réservés.</p>
+    </footer>
+
+    <!-- SCRIPT DES EFFETS D'APPARITION ET DE LIGHTBOX -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. EFFET D'APPARITION DES SECTIONS (INTERSECTION OBSERVER)
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: "0px 0px -20px 0px"
+            });
+
+            fadeSections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 2. FONCTIONNALITÉ LIGHTBOX (AGRANDISSEMENT DES IMAGES)
+            const lightbox = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const galleryImages = document.querySelectorAll('.activities-grid img');
+
+            // Ouvrir la lightbox sur clic d'une image
+            galleryImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    lightbox.classList.add('active');
+                    document.body.classList.add('lightbox-open');
+                    lightboxImg.src = this.src;
+                    lightboxCaption.textContent = this.alt || "Action de l'ONG A2EH";
+                });
+            });
+
+            // Fermer la lightbox sur clic du bouton fermer
+            closeBtn.addEventListener('click', closeLightbox);
+
+            // Fermer sur clic n'importe où à l'extérieur de l'image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target !== lightboxImg && e.target !== lightboxCaption) {
+                    closeLightbox();
+                }
+            });
+
+            // Fermer sur touche Échap (Escape) pour clavier ordinateur
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    closeLightbox();
+                }
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.classList.remove('lightbox-open');
+            }
+        });
+    </script>
+</body>
+</html>
